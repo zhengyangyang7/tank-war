@@ -1,8 +1,0 @@
-```[c]
-#include<stdio.h>
-int main()
-{
-  printf("hello world666\n");
-  return 0;
-}
-```
