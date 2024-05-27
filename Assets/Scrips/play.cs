@@ -123,4 +123,11 @@ public class play : MonoBehaviour
         Destroy(gameObject);
 
     }
+    public void defend()
+    {
+        isDefended = true;
+        defendTimeVal = 3;
+        defendEffectPrefab.SetActive(true);
+    }
+
 }

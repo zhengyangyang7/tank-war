@@ -5,7 +5,7 @@ using UnityEngine;
 public class MapCreation : MonoBehaviour
 {
     //用来装初始化地图所需物体的数组
-    //0.home 1.wall 2.barrier 3.born effect 4.river 5.grass 6.air barrier
+    //0.home 1.wall 2.barrier 3.born effect 4.river 5.grass 6.air barrier 7.shield
     //wall可以被子弹击破，而barrier不行
     public GameObject[] item;
     private List<Vector3> itemPositionList = new List<Vector3>();//已经有物体的位置列表
@@ -67,7 +67,7 @@ public class MapCreation : MonoBehaviour
         Instantiate(item[3], new Vector3(19, 8, 0), Quaternion.identity);
 
         InvokeRepeating("createEnemy", 4, 5);
-
+        InvokeRepeating("createShield", 4, 25);
     }
     //采用封装的方法
     private void CreateItem(GameObject createGameObject, Vector3 CreatePosition, Quaternion createRotation)
@@ -114,5 +114,10 @@ public class MapCreation : MonoBehaviour
         {
             Instantiate(item[3], new Vector3(19, 8, 0), Quaternion.identity);
         }
+    }
+    private void createShield()
+    {
+
+        Instantiate(item[7], CreateRandomPosition(), Quaternion.identity);
     }
 }
